@@ -1,15 +1,12 @@
-# 👷 `worker-template` Hello World
+# Discord Interactions Worker
 
-A template for kick starting a Cloudflare worker project.
+A simple kickstart for [Discord Slash-commands (interactions)](https://discord.com/developers/docs/interactions/slash-commands) with [Cloudflare Workers](https://workers.cloudflare.com/)
 
-[`index.js`](https://github.com/cloudflare/worker-template/blob/master/index.js) is the content of the Workers script.
+### Setup
 
-#### Wrangler
-
-To generate using [wrangler](https://github.com/cloudflare/wrangler)
-
-```
-wrangler generate projectname https://github.com/cloudflare/worker-template
-```
-
-Further documentation for Wrangler can be found [here](https://developers.cloudflare.com/workers/tooling/wrangler).
+1. Make an application on [Discord's developer portal](https://discord.com/developers/applications)
+2. Copy the public key as shown on the application page, and paste it in `index.js` under `const DISCORD_NACL_PUBLIC_KEY`
+3. If you haven't already, install [Wrangler](https://developers.cloudflare.com/workers/cli-wrangler/install-update)
+4. Run `npm install`
+5. [Login to Cloudflare](https://developers.cloudflare.com/workers/cli-wrangler/authentication), and set assosiated variables in `wrangler.toml`
+6. Run `wrangler publish` once you're ready to upload your worker to Cloudflare
